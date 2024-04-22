@@ -21,7 +21,11 @@ sudo nano /etc/hosts
 2. First run
 
 ```bash
+# Run it in every folder: this, site1 and site2
 docker-compose up -d
+
+# Or, if you have Make tool, run:
+make up
 ```
 
 ## Connect to the domains
