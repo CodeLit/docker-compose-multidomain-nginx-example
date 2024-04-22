@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  nginx_proxy:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    networks:
+      - new-nginx
+
+  site1:
+    image: php:8.2-fpm-alpine
+    container_name: site1
+    restart: always
+    volumes:
+      - ./site1:/var/www/html
+    networks:
+      - new-nginx
+
+  site2:
+    image: php:8.2-fpm-alpine
+    container_name: site2
+    restart: always
+    volumes:
+      - ./site2:/var/www/html
+    networks:
+      - new-nginx
+
+networks:
+  new-nginx:
+    driver: bridge
