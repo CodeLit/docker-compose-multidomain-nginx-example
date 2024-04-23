@@ -13,5 +13,5 @@ services:
 
 networks:
   nginx-example:
-    name: nginx-example
+    external: true
     driver: bridge
