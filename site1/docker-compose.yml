@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 
 services:
   site1:
@@ -13,5 +13,6 @@ services:
 
 networks:
   nginx-example:
+    name: nginx-example
     external: true
     driver: bridge
